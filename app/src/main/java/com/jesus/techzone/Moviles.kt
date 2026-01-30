@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 
 
 class Moviles : Fragment() {
@@ -15,7 +17,23 @@ class Moviles : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_moviles, container, false)
+        val view = inflater.inflate(R.layout.fragment_moviles, container, false)
+
+
+        val btnPixel = view.findViewById<Button>(R.id.btnPixel)
+        val btnSamsung = view.findViewById<Button>(R.id.btnSamsung)
+
+        btnPixel.setOnClickListener {
+            CarritoDatos.productosSeleccionados.add("Google Pixel 8 - 700€")
+            Toast.makeText(requireContext(), "Añadido Pixel 📱", Toast.LENGTH_SHORT).show()
+        }
+
+        btnSamsung.setOnClickListener {
+            CarritoDatos.productosSeleccionados.add("Samsung S24 Ultra - 1200€")
+            Toast.makeText(requireContext(), "Añadido Samsung 🌌", Toast.LENGTH_SHORT).show()
+        }
+
+        return view
     }
 
 

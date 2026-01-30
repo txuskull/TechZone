@@ -23,7 +23,19 @@ class ShoppingCart : Fragment() {
         if (CarritoDatos.productosSeleccionados.isEmpty()){
             textoProducto.text = "El carrito esta vacio"
         }else{
-            textoProducto.text = "${CarritoDatos.productosSeleccionados.joinToString("")} agregado."
+
+            val lista = StringBuilder()
+
+            for (i in CarritoDatos.productosSeleccionados){
+                lista.append("$i agregado.\n\n")
+            }
+
+            // Esto hace el StringBuilder y el bucle por ti "por debajo"
+            // separator = "\n" -> Pone un salto de línea entre cada producto
+            //textoProducto.text = CarritoDatos.productosSeleccionados.joinToString(separator = "\n"){ "$it agregado."}
+
+            textoProducto.text = lista.toString()
+
         }
 
         return view

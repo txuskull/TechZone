@@ -20,19 +20,17 @@ class Gaming : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_gaming, container, false)
 
-        val miTexto = view.findViewById<TextView>(R.id.textoRecibido)
-        val btnComprar = view.findViewById<Button>(R.id.btnComprar)
+        val btnMsi = view.findViewById<Button>(R.id.btnMsi)
+        val btnAlien = view.findViewById<Button>(R.id.btnAlienware)
 
-        val dato = arguments?.getString("1")
-
-        if (dato != null){
-            miTexto.text = dato
+        btnMsi.setOnClickListener {
+            CarritoDatos.productosSeleccionados.add("MSI Raider GE76 - 2500€")
+            Toast.makeText(requireContext(), "Añadido MSI 🐉", Toast.LENGTH_SHORT).show()
         }
 
-        btnComprar.setOnClickListener {
-
-            Toast.makeText(requireContext(), "¡Añadido al carrito!", Toast.LENGTH_SHORT).show()
-
+        btnAlien.setOnClickListener {
+            CarritoDatos.productosSeleccionados.add("Alienware Aurora - 3000€")
+            Toast.makeText(requireContext(), "Añadido Alienware 👽", Toast.LENGTH_SHORT).show()
         }
 
 

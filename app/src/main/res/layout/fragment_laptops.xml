@@ -24,10 +24,11 @@
         app:layout_constraintVertical_bias="0.309" />
 
     <Button
-        android:id="@+id/btnOferta"
+        android:id="@+id/btnMacbook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ver Oferta Gaming"
+        android:text="MacBook Pro M2"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -36,15 +37,16 @@
         app:layout_constraintVertical_bias="0.195" />
 
     <Button
-        android:id="@+id/btnComprarHP"
+        android:id="@+id/btnLenovo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comprar HP Victus"
+        android:text="Lenovo ThinkPad"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOferta"
+        app:layout_constraintTop_toBottomOf="@+id/btnMacbook"
         app:layout_constraintVertical_bias="0.214" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

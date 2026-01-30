@@ -19,25 +19,20 @@ class Laptops : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_laptops, container, false)
 
-        val boton = view.findViewById<Button>(R.id.btnOferta)
+        // 1. Buscamos los botones
+        val btnMac = view.findViewById<Button>(R.id.btnMacbook)
+        val btnLenovo = view.findViewById<Button>(R.id.btnLenovo)
 
-        boton.setOnClickListener {
-
-            val miPaquete = Bundle()
-            miPaquete.putString("1", "Oferta Especial PpCc")
-
-            findNavController().navigate(R.id.gaming, miPaquete)
-
+        // 2. Lógica Botón 1
+        btnMac.setOnClickListener {
+            CarritoDatos.productosSeleccionados.add("MacBook Pro M2 - 1500€")
+            Toast.makeText(requireContext(), "Añadido Mac 🍏", Toast.LENGTH_SHORT).show()
         }
 
-        val btnComprar = view.findViewById<Button>(R.id.btnComprarHP)
-
-        btnComprar.setOnClickListener {
-
-            CarritoDatos.productosSeleccionados.add("HP victus 15")
-
-            Toast.makeText(requireContext(), "Añadido al carrito", Toast.LENGTH_SHORT).show()
-
+        // 3. Lógica Botón 2
+        btnLenovo.setOnClickListener {
+            CarritoDatos.productosSeleccionados.add("Lenovo ThinkPad - 900€")
+            Toast.makeText(requireContext(), "Añadido Lenovo 💻", Toast.LENGTH_SHORT).show()
         }
 
 
