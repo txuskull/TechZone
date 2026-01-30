@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 
 class Laptops : Fragment() {
@@ -26,6 +27,16 @@ class Laptops : Fragment() {
             miPaquete.putString("1", "Oferta Especial PpCc")
 
             findNavController().navigate(R.id.gaming, miPaquete)
+
+        }
+
+        val btnComprar = view.findViewById<Button>(R.id.btnComprarHP)
+
+        btnComprar.setOnClickListener {
+
+            CarritoDatos.productosSeleccionados.add("HP victus 15")
+
+            Toast.makeText(requireContext(), "Añadido al carrito", Toast.LENGTH_SHORT).show()
 
         }
 
