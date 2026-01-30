@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="Menu Lateral" />
+    </group>
+
+    <item android:title="Support">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/soporteTecnico"
+                    android:icon="@android:drawable/ic_menu_manage"
+                    android:title="Soporte Tecnico" />
+
+                <item
+                    android:id="@+id/miCuenta"
+                    android:icon="@android:drawable/btn_star_big_on"
+                    android:title="Mi Cuenta" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Devices">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/moviles"
+                    android:icon="@android:drawable/ic_menu_manage"
+                    android:title="Moviles" />
+
+                <item
+                    android:id="@+id/laptops"
+                    android:icon="@android:drawable/btn_star_big_on"
+                    android:title="Laptops" />
+
+                <item
+                    android:id="@+id/gaming"
+                    android:icon="@android:drawable/btn_star_big_on"
+                    android:title="Gaming" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Carrito Compra">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/shoppingCart"
+                    android:icon="@android:drawable/ic_menu_manage"
+                    android:title="Carrito" />
+
+            </group>
+        </menu>
+    </item>
+
+</menu>

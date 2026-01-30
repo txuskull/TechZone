@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/laptops"
+            android:icon="?android:attr/galleryItemBackground"
+            android:title="Laptops"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/gaming"
+            android:icon="@android:drawable/ic_media_play"
+            android:title="Gaming"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/moviles"
+            android:icon="@android:drawable/ic_menu_always_landscape_portrait"
+            android:title="Moviles"
+            app:showAsAction="always" />
+
+
+
+</menu>

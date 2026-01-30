@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/laptops">
+
+    <fragment
+        android:id="@+id/laptops"
+        android:name="com.jesus.techzone.Laptops"
+        android:label="fragment_laptops"
+        tools:layout="@layout/fragment_laptops" />
+    <fragment
+        android:id="@+id/gaming"
+        android:name="com.jesus.techzone.Gaming"
+        android:label="fragment_gaming"
+        tools:layout="@layout/fragment_gaming" />
+    <fragment
+        android:id="@+id/moviles"
+        android:name="com.jesus.techzone.Moviles"
+        android:label="fragment_moviles"
+        tools:layout="@layout/fragment_moviles" />
+    <fragment
+        android:id="@+id/shoppingCart"
+        android:name="com.jesus.techzone.ShoppingCart"
+        android:label="fragment_shopping_cart"
+        tools:layout="@layout/fragment_shopping_cart" />
+    <fragment
+        android:id="@+id/miCuenta"
+        android:name="com.jesus.techzone.MiCuenta"
+        android:label="fragment_mi_cuenta"
+        tools:layout="@layout/fragment_mi_cuenta" />
+    <fragment
+        android:id="@+id/soporteTecnico"
+        android:name="com.jesus.techzone.SoporteTecnico"
+        android:label="fragment_soporte_tecnico"
+        tools:layout="@layout/fragment_soporte_tecnico" />
+</navigation>
