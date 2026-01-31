@@ -3,6 +3,7 @@ package com.jesus.techzone
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,7 +19,7 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    //private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,20 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         bottomNav.setupWithNavController(navController)
 
+        // PASO 2 Solucion Clase
+        findViewById<View>(android.R.id.content).post {//falta esto
+            val navController = findNavController(R.id.nav_host_fragment)
+            val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+            bottomNav.setupWithNavController(navController)
+            val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+            val builder = AppBarConfiguration.Builder(navController.graph)
+            builder.setOpenableLayout(drawerLayout)
+            val appBarConfiguration = builder.build()
+            toolbar.setupWithNavController(navController, appBarConfiguration)// y esto
+        }
+
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        navigationView.setupWithNavController(navController)
 
         //PASO 3 FATAL EN APUNTES (PONGO COMENTADO LO QUE SALE EN APUNTES...)
 //        val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
@@ -48,13 +63,6 @@ class MainActivity : AppCompatActivity() {
 //        val navigationView = findViewById<NavigationView>(R.id.nav_view)
 //        navigationView.setupWithNavController(navController)
 
-        val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
-        val navView = findViewById<NavigationView>(R.id.nav_view)
-        val builder = AppBarConfiguration.Builder(navController.graph)
-        builder.setOpenableLayout(drawerLayout)
-        appBarConfiguration = builder.build()
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
-        NavigationUI.setupWithNavController(navView, navController)
 
     }
     //1. ver menus(PASO 1 FUNCIONA MENU TOOLBAR IZQDA)
@@ -67,14 +75,14 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item)
     }
-
-    // 3. GESTIONAR MENU LATERAL OCULTO (MENU_DRAWER)  [NO ESTA EN APUNTES]
-    override fun onSupportNavigateUp(): Boolean {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as androidx.navigation.fragment.NavHostFragment
-        val navController = navHostFragment.navController
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
+//
+//    // 3. GESTIONAR MENU LATERAL OCULTO (MENU_DRAWER)  [NO ESTA EN APUNTES]
+//    override fun onSupportNavigateUp(): Boolean {
+//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as androidx.navigation.fragment.NavHostFragment
+//        val navController = navHostFragment.navController
+//        return NavigationUI.navigateUp(navController, appBarConfiguration)
+//                || super.onSupportNavigateUp()
+//    }
 
 
 }

@@ -4,17 +4,17 @@
 
         <item
             android:id="@+id/laptops"
-            android:icon="?android:attr/galleryItemBackground"
+            android:icon="@drawable/outline_computer_24"
             android:title="Laptops"
             app:showAsAction="always" />
         <item
             android:id="@+id/gaming"
-            android:icon="@android:drawable/ic_media_play"
+            android:icon="@drawable/outline_gamepad_down_24"
             android:title="Gaming"
             app:showAsAction="always" />
         <item
             android:id="@+id/moviles"
-            android:icon="@android:drawable/ic_menu_always_landscape_portrait"
+            android:icon="@drawable/baseline_phone_android_24"
             android:title="Moviles"
             app:showAsAction="always" />
 

@@ -6,7 +6,9 @@
 
     <item
         android:id="@+id/shoppingCart"
-        android:icon="?attr/actionModeSelectAllDrawable"
-        android:title="Help"
+        android:icon="@drawable/outline_add_shopping_cart_24"
+        android:title="Carrito Compra"
         app:showAsAction="always" />
+
+
 </menu>

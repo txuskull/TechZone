@@ -25,13 +25,13 @@ class Laptops : Fragment() {
 
         // 2. Lógica Botón 1
         btnMac.setOnClickListener {
-            CarritoDatos.productosSeleccionados.add("MacBook Pro M2 - 1500€")
+            CarritoDatos.productosSeleccionados.add(Producto("MacBook Pro M2", 1500.00))
             Toast.makeText(requireContext(), "Añadido Mac 🍏", Toast.LENGTH_SHORT).show()
         }
 
         // 3. Lógica Botón 2
         btnLenovo.setOnClickListener {
-            CarritoDatos.productosSeleccionados.add("Lenovo ThinkPad - 900€")
+            CarritoDatos.productosSeleccionados.add(Producto("Lenovo ThinkPad", 900.00))
             Toast.makeText(requireContext(), "Añadido Lenovo 💻", Toast.LENGTH_SHORT).show()
         }
 

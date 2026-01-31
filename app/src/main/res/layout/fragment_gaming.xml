@@ -31,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FF5722"
+        android:fontFamily="@font/aclonica"
         android:text="MSI Raider"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"

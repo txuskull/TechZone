@@ -3,7 +3,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:icon="@android:drawable/ic_menu_view"
+            android:icon="@drawable/ic_launcher_foreground"
             android:title="Menu Lateral" />
     </group>
 
@@ -12,12 +12,12 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/soporteTecnico"
-                    android:icon="@android:drawable/ic_menu_manage"
+                    android:icon="@drawable/outline_contact_support_24"
                     android:title="Soporte Tecnico" />
 
                 <item
                     android:id="@+id/miCuenta"
-                    android:icon="@android:drawable/btn_star_big_on"
+                    android:icon="@drawable/outline_face_24"
                     android:title="Mi Cuenta" />
             </group>
         </menu>
@@ -28,17 +28,17 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/moviles"
-                    android:icon="@android:drawable/ic_menu_manage"
+                    android:icon="@drawable/baseline_phone_android_24"
                     android:title="Moviles" />
 
                 <item
                     android:id="@+id/laptops"
-                    android:icon="@android:drawable/btn_star_big_on"
+                    android:icon="@drawable/outline_computer_24"
                     android:title="Laptops" />
 
                 <item
                     android:id="@+id/gaming"
-                    android:icon="@android:drawable/btn_star_big_on"
+                    android:icon="@drawable/outline_gamepad_down_24"
                     android:title="Gaming" />
             </group>
         </menu>

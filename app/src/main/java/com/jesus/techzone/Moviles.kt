@@ -24,12 +24,12 @@ class Moviles : Fragment() {
         val btnSamsung = view.findViewById<Button>(R.id.btnSamsung)
 
         btnPixel.setOnClickListener {
-            CarritoDatos.productosSeleccionados.add("Google Pixel 8 - 700€")
+            CarritoDatos.productosSeleccionados.add(Producto("Google Pixel 8", 700.0))
             Toast.makeText(requireContext(), "Añadido Pixel 📱", Toast.LENGTH_SHORT).show()
         }
 
         btnSamsung.setOnClickListener {
-            CarritoDatos.productosSeleccionados.add("Samsung S24 Ultra - 1200€")
+            CarritoDatos.productosSeleccionados.add(Producto("Samsung S24 Ultra", 1200.0))
             Toast.makeText(requireContext(), "Añadido Samsung 🌌", Toast.LENGTH_SHORT).show()
         }
 

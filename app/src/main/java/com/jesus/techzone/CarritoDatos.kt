@@ -4,5 +4,5 @@ package com.jesus.techzone
 // Es como una caja fuerte accesible desde cualquier pantalla.
 object CarritoDatos {
     // Aquí guardamos la lista de nombres de productos
-    val productosSeleccionados = mutableListOf<String>()
+    val productosSeleccionados = mutableListOf<Producto>()
 }
