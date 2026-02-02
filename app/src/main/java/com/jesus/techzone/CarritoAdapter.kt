@@ -3,9 +3,11 @@ package com.jesus.techzone
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 /*Si en el examen te piden un RecyclerView:
 Creas la clase.
@@ -17,7 +19,9 @@ Le das a "Implement Members" y él solo te escribe las
 
 // Esta clase es el CAMARERO. Recibe la lista de datos (nuestra lista de Strings)
 // 1. LA CLASE PRINCIPAL (Siempre hereda de Adapter)
-class CarritoAdapter(private val listaDatos: MutableList<Producto>, private val onListaCambio: () -> Unit) :
+class CarritoAdapter(private val listaDatos: MutableList<Producto>,
+                     private val onListaCambio: () -> Unit,
+                     private val onProductoClick: (Producto) -> Unit) :
     RecyclerView.Adapter<CarritoAdapter.MiViewHolder>() {  // <--- ESTO ES FIJO
 
     // --- CLASE INTERNA (La Bandeja) ---
@@ -30,6 +34,7 @@ class CarritoAdapter(private val listaDatos: MutableList<Producto>, private val 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         val titulo: TextView = view.findViewById(R.id.tvNombreItem)
         val borrar: LinearLayout = view.findViewById(R.id.btnBorrar)
+        val imagen: ImageView = view.findViewById(R.id.imgIcono)
 
     }
 
@@ -53,6 +58,10 @@ class CarritoAdapter(private val listaDatos: MutableList<Producto>, private val 
         // 2. Lo escribimos en el TextView del ViewHolder
         holder.titulo.text = "${productoActual.nombre} - ${productoActual.precio}"
 
+        Glide.with(holder.itemView.context)
+            .load(productoActual.imagenUrl)
+            .into(holder.imagen)
+
         // --- LÓGICA DE BORRAR ---
         holder.borrar.setOnClickListener {
 
@@ -69,6 +78,13 @@ class CarritoAdapter(private val listaDatos: MutableList<Producto>, private val 
             notifyItemRangeChanged(position, listaDatos.size)
 
             onListaCambio()
+        }
+
+        // --- LÓGICA DE DETALLE (CLIC EN LA TARJETA) --- <--- NUEVO
+        // 'itemView' representa toda la fila. Si tocas en cualquier lado que no sea la papelera:
+        holder.itemView.setOnClickListener {
+            // Usamos el segundo teléfono y le pasamos el producto
+            onProductoClick(productoActual)
         }
     }
 

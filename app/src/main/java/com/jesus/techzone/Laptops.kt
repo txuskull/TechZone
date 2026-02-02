@@ -25,13 +25,19 @@ class Laptops : Fragment() {
 
         // 2. Lógica Botón 1
         btnMac.setOnClickListener {
-            CarritoDatos.productosSeleccionados.add(Producto("MacBook Pro M2", 1500.00))
+            CarritoDatos.productosSeleccionados.add(Producto(
+                "MacBook Pro",
+                1500.0,
+                "https://m.media-amazon.com/images/I/61bwiPRcv2L._AC_UF894,1000_QL80_.jpg"
+            ))
             Toast.makeText(requireContext(), "Añadido Mac 🍏", Toast.LENGTH_SHORT).show()
         }
 
         // 3. Lógica Botón 2
         btnLenovo.setOnClickListener {
-            CarritoDatos.productosSeleccionados.add(Producto("Lenovo ThinkPad", 900.00))
+            CarritoDatos.productosSeleccionados.add(Producto("Lenovo ThinkPad",
+                900.00,
+                "https://m.media-amazon.com/images/I/61bwiPRcv2L._AC_UF894,1000_QL80_.jpg"))
             Toast.makeText(requireContext(), "Añadido Lenovo 💻", Toast.LENGTH_SHORT).show()
         }
 

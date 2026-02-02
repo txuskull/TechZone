@@ -55,14 +55,21 @@ class MainActivity : AppCompatActivity() {
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setupWithNavController(navController)
 
-        //PASO 3 FATAL EN APUNTES (PONGO COMENTADO LO QUE SALE EN APUNTES...)
-//        val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
-//        val builder = AppBarConfiguration.Builder(navController.graph)
-//        builder.setOpenableLayout(drawerLayout)
-//        val appBarConfiguration = builder.build()
-//        val navigationView = findViewById<NavigationView>(R.id.nav_view)
-//        navigationView.setupWithNavController(navController)
+        // LISTENER: EL "ESPÍA" DE NAVEGACIÓN
+        // Esto se ejecuta cada vez que cambias de pantalla automáticamente
+        navController.addOnDestinationChangedListener { _, destination, _ ->
 
+            // Comprobamos si el destino actual es el Carrito
+            // (Asegúrate de que R.id.shoppingCart es el ID que le pusiste en tu nav_graph.xml)
+            if (destination.id == R.id.shoppingCart) {
+
+                // OCULTAR el menú de abajo (Lo más común en apps pro)
+                bottomNav.visibility = View.GONE
+            } else {
+                // Si NO estamos en el carrito, asegurarnos de que el menú se vea
+                bottomNav.visibility = View.VISIBLE
+            }
+        }
 
     }
     //1. ver menus(PASO 1 FUNCIONA MENU TOOLBAR IZQDA)
@@ -75,14 +82,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item)
     }
-//
-//    // 3. GESTIONAR MENU LATERAL OCULTO (MENU_DRAWER)  [NO ESTA EN APUNTES]
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as androidx.navigation.fragment.NavHostFragment
-//        val navController = navHostFragment.navController
-//        return NavigationUI.navigateUp(navController, appBarConfiguration)
-//                || super.onSupportNavigateUp()
-//    }
+
 
 
 }

@@ -35,4 +35,9 @@
         android:name="com.jesus.techzone.SoporteTecnico"
         android:label="fragment_soporte_tecnico"
         tools:layout="@layout/fragment_soporte_tecnico" />
+    <fragment
+        android:id="@+id/fragment_detalle"
+        android:name="com.jesus.techzone.fragment_detalle"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" />
 </navigation>

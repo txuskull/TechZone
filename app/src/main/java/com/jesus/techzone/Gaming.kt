@@ -24,12 +24,16 @@ class Gaming : Fragment() {
         val btnAlien = view.findViewById<Button>(R.id.btnAlienware)
 
         btnMsi.setOnClickListener {//"MSI Raider GE76 - 2500€"
-            CarritoDatos.productosSeleccionados.add(Producto("MSI Raider GE76", 2500.00))
+            CarritoDatos.productosSeleccionados.add(Producto("MSI Raider GE76",
+                2500.00,
+                "https://m.media-amazon.com/images/I/61bwiPRcv2L._AC_UF894,1000_QL80_.jpg"))
             Toast.makeText(requireContext(), "Añadido MSI 🐉", Toast.LENGTH_SHORT).show()
         }
 
         btnAlien.setOnClickListener {//"Alienware Aurora - 3000€"
-            CarritoDatos.productosSeleccionados.add(Producto("Alienware Aurora", 3000.00))
+            CarritoDatos.productosSeleccionados.add(Producto("Alienware Aurora",
+                3000.00,
+                "https://m.media-amazon.com/images/I/61bwiPRcv2L._AC_UF894,1000_QL80_.jpg"))
             Toast.makeText(requireContext(), "Añadido Alienware 👽", Toast.LENGTH_SHORT).show()
         }
 
